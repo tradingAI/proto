@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package common;
 
-option go_package = "github.com/tradingAI/web/proto";
+option go_package = "github.com/tradingAI/tweb/proto";
 
 enum Error {
     NO_ERROR = 0;

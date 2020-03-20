@@ -4,7 +4,7 @@ import "common.proto";
 
 package account;
 
-option go_package = "github.com/tradingAI/web/proto";
+option go_package = "github.com/tradingAI/tweb/proto";
 
 // Account
 
