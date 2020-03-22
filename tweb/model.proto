@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+import "common.proto";
+
+package model;
+
+option go_package = "github.com/tradingAI/tweb/proto";
+
+// model
+
+message FetchModelRequest {
+    
+}
+
+message FetchModelResponse {
+    common.Error error = 1;
+    repeated Model models = 2;
+}
+
+message CreateModelRequest {
+    string name = 1;
+    string version = 2;
+    string description = 3;
+    string file_type = 4;
+}
+
+message CreateModelResponse {
+    common.Error error = 1;
+    string id = 2;
+}
+
+message DeleteModelRequest {
+    string id = 1;
+}
+
+message DeleteModelResponse {
+    common.Error error = 1;
+}
+
+
+message UploadModelCompleteRequest {
+    repeated ChunkMeta chunks = 1;
+}
+
+message UploadModelCompleteResponse {
+    common.Error error = 1;
+}
+
+message ChunkMeta {
+    string md5 = 1;
+    string index = 2;
+}
+
+message Model {
+    int64 id = 1;
+    string name = 2;
+    string version = 3;
+    string description = 4;
+    string file_type = 5;
+    common.User user = 6;
+}
