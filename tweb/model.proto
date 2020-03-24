@@ -51,6 +51,15 @@ message ChunkMeta {
     string index = 2;
 }
 
+// Status is the status of model upload to minio.
+enum ModelStatus {
+    UNKNOWN = 0;
+    CREATED = 1;
+    PROCESSING = 2;
+    SUCCESS = 3;
+    FAILED = 4;
+}
+
 message Model {
     int64 id = 1;
     string name = 2;
@@ -58,4 +67,5 @@ message Model {
     string description = 4;
     string file_type = 5;
     common.User user = 6;
+    ModelStatus status = 7;
 }
