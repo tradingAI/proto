@@ -37,13 +37,21 @@ message DeleteModelResponse {
     common.Error error = 1;
 }
 
-
 message UploadModelCompleteRequest {
     repeated ChunkMeta chunks = 1;
 }
 
 message UploadModelCompleteResponse {
     common.Error error = 1;
+}
+
+message DownloadModelRequest {
+    string id = 1;
+}
+
+message DownloadModelResponse {
+    common.Error error = 1;
+    string url = 2;
 }
 
 message ChunkMeta {
