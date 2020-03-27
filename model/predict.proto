@@ -13,14 +13,15 @@ enum PredictType {
     SUGGEST_BUY = 0;
     SUGGEST_SELL = 1;
     SUGGEST_VOLUME = 2;
-    PREDICT_HIGH = 3;
-    PREDICT_LOW = 4;
-    PREDICT_CLOSE = 5;
+    SUGGEST_VOLUME_PCT = 3;
+    PREDICT_HIGH = 4;
+    PREDICT_LOW = 5;
+    PREDICT_CLOSE = 6;
 }
 
 
 message Action {
-  string name = 1;
+  PredictType action_type = 1;
   string value = 2;
 }
 
@@ -33,5 +34,5 @@ message PredictRequest {
 message PredictResponse {
   common.Error error = 1;
   string request_id = 2;
-  repeated action
+  repeated Action actions = 3;
 }
