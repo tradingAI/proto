@@ -6,10 +6,8 @@ package model;
 
 option go_package = "github.com/tradingAI/proto/gen/go/tweb";
 
-// model
-
 message FetchModelRequest {
-    
+
 }
 
 message FetchModelResponse {

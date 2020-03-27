@@ -1,14 +1,13 @@
 syntax = "proto3";
 
-package train;
+package common;
 
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 option python_package = "github.com/tradingAI/proto/model";
 
-message TrainRequest {
-
-}
-
-message TrainResponse {
-
+enum Error {
+    OK = 0;
+    UNKNOWN_ERROR = 1;
+    INPUT_ERROR = 2;
+    INTERNAL_ERROR = 3;
 }

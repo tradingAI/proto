@@ -7,6 +7,7 @@ import "predict.proto";
 import "evaluate.proto";
 
 option go_package = "github.com/tradingAI/proto/gen/go/model";
+option python_package = "github.com/tradingAI/proto/model";
 
 
 service Model {

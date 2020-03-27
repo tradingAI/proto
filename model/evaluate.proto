@@ -2,12 +2,46 @@ syntax = "proto3";
 
 package evaluate;
 
+import "common.proto"
+import "tweb/model.proto"
+
 option go_package = "github.com/tradingAI/proto/gen/go/model";
+option python_package = "github.com/tradingAI/proto/model";
+
+message ExcessReturn {
+  // 基线"股票/指数"代码
+  string base_code = 1;
+  // 基线策略名称
+  string strategy_name = 2;
+  // 绝对超额收益率
+  double absolute_value = 3;
+  // 年化超额收益率
+  double annualized_value = 3;
+}
+
+message EvaluateMetrics {
+  // 绝对收益率
+  double absolute_return = 1;
+  // 年化收益率
+  double annualized_return = 2;
+  // 最大回撤率
+  double max_drawdown = 3;
+  // 夏普比率
+  double sharpe_ratio = 4;
+  // 超额收益率
+  option ExcessReturn excess_return = 5;
+}
 
 message EvaluateRequest {
-
+    string id = 1;
+    model.Model model = 2;
+    // 评估起止日期
+    string start = 3;
+    string end = 4;
 }
 
 message EvaluateResponse {
-    
+    common.Error error = 1;
+    string request_id = 2;
+    EvaluateMetrics metrics = 3;
 }
