@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package service;
+
+import "train.proto";
+import "predict.proto";
+import "evaluate.proto";
+
+option go_package = "github.com/tradingAI/proto/gen/go/model";
+
+
+service Model {
+    rpc Train(train.TrainRequest) returns (train.TrainResponse);
+    rpc Predict(predict.PredictRequest) returns (predict.PredictResponse);
+    rpc Evaluate(evaluate.EvaluateRequest) returns (evaluate.EvaluateResponse);
+}

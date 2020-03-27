@@ -4,7 +4,7 @@ import "common.proto";
 
 package model;
 
-option go_package = "github.com/tradingAI/tweb/proto";
+option go_package = "github.com/tradingAI/proto/gen/go/tweb";
 
 // model
 
