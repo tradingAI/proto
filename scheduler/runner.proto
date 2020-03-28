@@ -34,7 +34,7 @@ message Runner {
     int available_memory = 9;
     // gpu memory, Mb, 无GPU则填0
     int gpu_memory = 10;
-    // 可使用显存
+    // 可使用显存 Mb
     double available_gpu_memory = 11;
 
 }
