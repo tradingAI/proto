@@ -9,7 +9,7 @@ option python_package = "github.com/tradingAI/proto/model";
 
 message TrainRequest {
     string id = 1;
-    bytes meta = 2;
+    bytes model_meta = 2;
 }
 
 message TrainResponse {

@@ -24,6 +24,14 @@ message Action {
     string value = 2;
 }
 
+// predict results store in db
+message PredictResult {
+  string request_id = 1;
+  string model_id = 2;
+  string date = 3;
+  repeated Action actions =4;
+}
+
 message PredictRequest {
     string id = 1;
     model.Model model = 2;
