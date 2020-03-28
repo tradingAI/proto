@@ -2,13 +2,17 @@ syntax = "proto3";
 
 package train;
 
+import "common.proto"
+
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 option python_package = "github.com/tradingAI/proto/model";
 
 message TrainRequest {
-
+    string id = 1;
+    bytes meta = 2;
 }
 
 message TrainResponse {
-
+    common.Error error = 1;
+    string request_id = 2;
 }
