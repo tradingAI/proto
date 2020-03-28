@@ -9,5 +9,5 @@ message PredictRequest {
 }
 
 message PredictResponse {
-    
+
 }

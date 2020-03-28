@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package job;
+
+option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
+
+enum JobType {
+    UNKNOWN = 0;
+    PREDICT = 1;
+    TRAIN = 2;
+    EVALUATION = 3;
+}
+
+enum JobStatus {
+    UNKNOWN = 0;
+    CREATED = 1;
+    RUNNING = 2;
+    SUCCESSED = 3;
+    FAILED = 4;
+}
+
+// TODO (mike): pls add job details such as epoch, reward...
+message Details {
+
+}
+
+message Job {
+    uint64 id = 1;
+    JobType type = 2;
+    JobStatus status = 3;
+    Details details = 4;
+}

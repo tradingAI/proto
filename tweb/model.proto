@@ -69,7 +69,7 @@ enum ModelStatus {
 }
 
 message Model {
-    int64 id = 1;
+    uint64 id = 1;
     string name = 2;
     string version = 3;
     string description = 4;

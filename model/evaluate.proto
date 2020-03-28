@@ -9,5 +9,5 @@ message EvaluateRequest {
 }
 
 message EvaluateResponse {
-    
+
 }

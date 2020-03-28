@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package runner;
+
+import "job.proto";
+
+option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
+
+enum RunnerStatus {
+    UNKNOWN = 0;
+    IDLE = 1;
+    BUSY = 2;
+    RESTARTING = 3;
+}
+
+message Runner {
+    // runner id
+    string id = 1;
+    // runner status
+    RunnerStatus status = 2;
+    // gpu index
+    repeated uint32 gpus = 3;
+    // jobs in processing
+    repeated job.Job jobs = 4;
+}
