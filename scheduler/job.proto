@@ -19,18 +19,6 @@ enum JobStatus {
     FAILED = 4;
 }
 
-enum InputType {
-  UNKNOWN = 0;
-  PREDICT = 1;
-  TRAIN = 2;
-  EVALUATION = 3;
-}
-
-enum Input {
-  InputType type = 1;
-  bytes proto_bytes = 2;
-}
-
 message Job {
     uint64 id = 1;
     JobStatus status = 2;
