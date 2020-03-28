@@ -29,7 +29,7 @@ message PredictResult {
   string request_id = 1;
   string model_id = 2;
   string date = 3;
-  repeated Action actions =4;
+  repeated Action actions = 4;
 }
 
 message PredictRequest {
