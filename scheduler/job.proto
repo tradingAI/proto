@@ -19,14 +19,39 @@ enum JobStatus {
     FAILED = 4;
 }
 
+message Job {
+    uint64 id = 1;
+    JobStatus status = 2;
+    JobType type = 3;
+    PredictionJob prediction_job = 4;
+    PredictionJobDetails prediction_job_details = 5;
+    TrainingJob training_job = 6;
+    TrainingJobDetails training_job_details = 7;
+    EvaluationJob evaluation_job = 8;
+    EvaluationJobDetails evaluation_job_details = 9;
+}
+
 // TODO (mike): pls add job details such as epoch, reward...
-message Details {
+message PredictionJob {
 
 }
 
-message Job {
-    uint64 id = 1;
-    JobType type = 2;
-    JobStatus status = 3;
-    Details details = 4;
+message PredictionJobDetails {
+
+}
+
+message TrainingJob {
+
+}
+
+message TrainingJobDetails {
+
+}
+
+message EvaluationJob {
+
+}
+
+message EvaluationJobDetails {
+
 }
