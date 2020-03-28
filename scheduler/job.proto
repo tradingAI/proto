@@ -19,39 +19,28 @@ enum JobStatus {
     FAILED = 4;
 }
 
+enum InputType {
+  UNKNOWN = 0;
+  PREDICT = 1;
+  TRAIN = 2;
+  EVALUATION = 3;
+}
+
+enum Input {
+  InputType type = 1;
+  bytes proto_bytes = 2;
+}
+
 message Job {
     uint64 id = 1;
     JobStatus status = 2;
     JobType type = 3;
-    PredictionJob prediction_job = 4;
-    PredictionJobDetails prediction_job_details = 5;
-    TrainingJob training_job = 6;
-    TrainingJobDetails training_job_details = 7;
-    EvaluationJob evaluation_job = 8;
-    EvaluationJobDetails evaluation_job_details = 9;
-}
-
-// TODO (mike): pls add job details such as epoch, reward...
-message PredictionJob {
-
-}
-
-message PredictionJobDetails {
-
-}
-
-message TrainingJob {
-
-}
-
-message TrainingJobDetails {
-
-}
-
-message EvaluationJob {
-
-}
-
-message EvaluationJobDetails {
-
+    int64 create_time_msec = 4;
+    int64 finished_time_msec = 5;
+    int retry = 6;
+    uint64 runner_id = 7;
+    oneof request {
+        // request types
+        // TODO(wen): https://github.com/tradingAI/proto/pull/3
+    }
 }

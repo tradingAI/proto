@@ -19,5 +19,22 @@ message Runner {
     // runner status
     RunnerStatus status = 2;
     // id of job in processing
-    uint64 job_id = 3;
+    repeated uint64 job_ids = 3;
+    // cpu core number
+    int cpu_core_num = 4;
+    // cpu 使用率
+    double cpu_utilization = 5;
+    // 无GPU则填0
+    int gpu_num = 6;
+    // gpu 使用率, 无GPU则填0
+    double gpu_utilization = 7;
+    // RAM, Mb
+    int memory = 8;
+    // 可使用内存 Mb
+    int available_memory = 9;
+    // gpu memory, Mb, 无GPU则填0
+    int gpu_memory = 10;
+    // 可使用显存
+    double available_gpu_memory = 11;
+
 }
