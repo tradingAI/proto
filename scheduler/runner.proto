@@ -18,8 +18,6 @@ message Runner {
     string id = 1;
     // runner status
     RunnerStatus status = 2;
-    // gpu index
-    repeated uint32 gpus = 3;
-    // jobs in processing
-    repeated job.Job jobs = 4;
+    // id of job in processing
+    uint64 job_id = 3;
 }
