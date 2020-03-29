@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package runner;
 
-import "job.proto";
-
 option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 
 enum RunnerStatus {

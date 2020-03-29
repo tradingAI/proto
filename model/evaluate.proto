@@ -4,7 +4,7 @@ package evaluate;
 
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 
-import "tweb/model.proto"
+import "common/model.proto";
 
 enum BaseStrategy {
     UNKNOWN = 0;
@@ -19,7 +19,7 @@ message ExcessReturn {
   // 绝对超额收益率
   float absolute_value = 3;
   // 年化超额收益率
-  float annualized_value = 3;
+  float annualized_value = 4;
 }
 
 

@@ -1,16 +1,17 @@
 syntax = "proto3";
 
-import "common.proto";
-
 package session;
 
 option go_package = "github.com/tradingAI/proto/gen/go/tweb";
+
+import "common/user.proto";
+import "tweb/common.proto";
 
 // Session
 
 message Session {
     string token = 1;
-    common.User user = 2;
+    user.User user = 2;
 }
 
 // Login
@@ -28,6 +29,7 @@ message LoginResponse {
 // Logout
 
 message LogoutRequest {
+
 }
 
 message LogoutResponse {
