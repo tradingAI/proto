@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package modelio;
+package evaluate;
 
-option go_package = "github.com/tradingAI/proto/gen/go/modelio";
+option go_package = "github.com/tradingAI/proto/gen/go/model";
 
 message ExcessReturn {
   // 基线"股票/指数"代码

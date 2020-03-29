@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package modelio;
+package output;
 
-option go_package = "github.com/tradingAI/proto/gen/go/modelio";
+option go_package = "github.com/tradingAI/proto/gen/go/model";
 
 import "evaluato.proto"
 
@@ -33,12 +33,12 @@ message TbasePredictOutput {
 message TbaseEvalOutput {
   uint64 job_id = 1;
   uint64 model_id = 2;
-  EvaluateMetrics metris = 3;
+  evaluate.EvaluateMetrics metris = 3;
 }
 
 
 message TbaseTrainOutput{
   uint64 job_id = 1;
   uint64 model_id = 2;
-  EvaluateMetrics metris = 3;
+  evaluate.EvaluateMetrics metris = 3;
 }
