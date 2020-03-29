@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package modelio;
 
-option go_package = "github.com/tradingAI/proto/gen/go/model";
+option go_package = "github.com/tradingAI/proto/gen/go/modelio";
 
 import "tweb/model.proto"
 
