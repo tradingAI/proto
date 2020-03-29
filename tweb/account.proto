@@ -40,5 +40,5 @@ message DeleteAccountRequest {
 }
 
 message DeleteAccountResponse {
-    // common.Error error = 1;
+    common.Error error = 1;
 }
