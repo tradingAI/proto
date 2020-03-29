@@ -4,6 +4,8 @@ package evaluate;
 
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 
+import "tweb/model.proto"
+
 message ExcessReturn {
   // 基线"股票/指数"代码
   string base_code = 1;
@@ -28,3 +30,16 @@ message EvaluateMetrics {
   // 超额收益率
   ExcessReturn excess_return = 5;
 }
+
+message TbaseEvaluateInput {
+    model.Model model = 1;
+    // 评估起止日期
+    string start = 2;
+    string end = 3;
+  }
+
+  message TbaseEvaluateOutput {
+    uint64 job_id = 1;
+    uint64 model_id = 2;
+    evaluate.EvaluateMetrics metris = 3;
+  }

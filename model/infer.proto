@@ -1,10 +1,16 @@
 syntax = "proto3";
 
-package output;
+package infer;
 
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 
-import "evaluato.proto"
+import "tweb/model.proto"
+
+message TbaseInferInput {
+    model.Model model = 1;
+    // YYYYmmdd
+    string date = 2;
+}
 
 enum ActionType {
     SUGGEST_BUY = 0;
@@ -22,23 +28,10 @@ message TbaseAction {
 }
 
 // predict results store in db
-message TbasePredictOutput {
+message TbaseInferOutput {
   uint64 job_id = 1;
   uint64 model_id = 2;
   // YYYYmmdd
   string date = 3;
   repeated Action actions = 4;
-}
-
-message TbaseEvalOutput {
-  uint64 job_id = 1;
-  uint64 model_id = 2;
-  evaluate.EvaluateMetrics metris = 3;
-}
-
-
-message TbaseTrainOutput{
-  uint64 job_id = 1;
-  uint64 model_id = 2;
-  evaluate.EvaluateMetrics metris = 3;
 }
