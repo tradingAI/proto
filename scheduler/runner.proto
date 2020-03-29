@@ -19,7 +19,7 @@ message Runner {
     // runner status
     RunnerStatus status = 2;
     // id of job in processing
-    repeated uint64 job_ids = 3;
+    repeated uint64 jobs_id = 3;
     // cpu core number
     int cpu_core_num = 4;
     // cpu 使用率
