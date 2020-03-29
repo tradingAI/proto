@@ -19,5 +19,5 @@ message Runner {
     // runner status
     RunnerStatus status = 2;
     // id of job in processing
-    uint64 job_id = 3;
+    repeated uint64 job_ids = 3;
 }
