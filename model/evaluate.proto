@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/tradingAI/proto/gen/go/model";
+
+message ExcessReturn {
+  // 基线"股票/指数"代码
+  string base_code = 1;
+  // 基线策略名称
+  string strategy_name = 2;
+  // 绝对超额收益率
+  float absolute_value = 3;
+  // 年化超额收益率
+  float annualized_value = 3;
+}
+
+
+message EvaluateMetrics {
+  // 绝对收益率
+  float absolute_return = 1;
+  // 年化收益率
+  float annualized_return = 2;
+  // 最大回撤率
+  float max_drawdown = 3;
+  // 夏普比率
+  float sharpe_ratio = 4;
+  // 超额收益率
+  option ExcessReturn excess_return = 5;
+}

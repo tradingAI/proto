@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/tradingAI/proto/gen/go/model";
+
+import "evaluato.proto"
+
+enum ActionType {
+    SUGGEST_BUY = 0;
+    SUGGEST_SELL = 1;
+    SUGGEST_VOLUME = 2;
+    SUGGEST_VOLUME_PCT = 3;
+    PREDICT_HIGH = 4;
+    PREDICT_LOW = 5;
+    PREDICT_CLOSE = 6;
+}
+
+message TbaseAction {
+    ActionType action_type = 1;
+    string value = 2;
+}
+
+// predict results store in db
+message TbasePredictOutput {
+  uint64 job_id = 1;
+  uint64 model_id = 2;
+  // YYYYmmdd
+  string date = 3;
+  repeated Action actions = 4;
+}
+
+message TbaseEvalOutput {
+  uint64 job_id = 1;
+  uint64 model_id = 2;
+  EvaluateMetrics metris = 3;
+}
+
+
+message TbaseTrainOutput{
+  uint64 job_id = 1;
+  uint64 model_id = 2;
+  EvaluateMetrics metris = 3;
+}

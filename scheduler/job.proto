@@ -30,6 +30,8 @@ message Job {
     int64 finished_time_usec = 8;
     uint32 total_steps = 9;
     uint32 current_step = 10;
+    // 预计完成时间
+    float eta = 11;
     oneof request {
         // request types
         // TODO(wen): https://github.com/tradingAI/proto/pull/3
