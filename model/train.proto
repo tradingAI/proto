@@ -13,5 +13,5 @@ message TbaseTrainInput {
 message TbaseTrainOutput{
   uint64 job_id = 1;
   uint64 model_id = 2;
-  evaluate.EvaluateMetrics metris = 3;
+  evaluate.EvaluateMetrics metrics = 3;
 }
