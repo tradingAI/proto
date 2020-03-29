@@ -24,11 +24,12 @@ message Job {
     string runner_id = 2;
     JobType type = 3;
     JobStatus status = 4;
-    int retry = 5;
-    int64 create_time_usec = 6;
-    int64 finished_time_usec = 7;
-    uint32 total_steps = 8;
-    uint32 current_step = 9;
+    uint32 retry = 5;
+    uint32 max_retry = 6;
+    int64 create_time_usec = 7;
+    int64 finished_time_usec = 8;
+    uint32 total_steps = 9;
+    uint32 current_step = 10;
     oneof request {
         // request types
         // TODO(wen): https://github.com/tradingAI/proto/pull/3
