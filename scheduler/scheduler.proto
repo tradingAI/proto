@@ -29,6 +29,7 @@ message DestoryRunnerResponse {
 
 message CreateJobRequest {
     string job_id = 1;
+    uint32 max_retry = 2;
 }
 
 message CreateJobResponse {

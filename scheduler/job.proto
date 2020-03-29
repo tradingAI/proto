@@ -23,8 +23,8 @@ message Job {
     uint64 id = 1;
     JobStatus status = 2;
     JobType type = 3;
-    int64 create_time_msec = 4;
-    int64 finished_time_msec = 5;
+    int64 create_time_usec = 4;
+    int64 finished_time_usec = 5;
     int retry = 6;
     string runner_id = 7;
     oneof request {
