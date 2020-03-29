@@ -2,9 +2,12 @@ syntax = "proto3";
 
 package scheduler;
 
-import "runner.proto";
-
 option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
+
+import "runner.proto";
+import "model/evaluate.proto"
+import "model/infer.proto"
+import "model/train.proto"
 
 service Scheduler {
     // Tweb <-> Scheduler
@@ -26,10 +29,14 @@ message DestoryRunnerResponse {
     bool ok = 1;
 }
 
-
 message CreateJobRequest {
     string job_id = 1;
     uint32 max_retry = 2;
+    oneof input {
+        evaluate.TbaseEvaluateInput eval_input = 12;
+        infer.TbaseInferInput infer_input = 13;
+        train.TbaseTrainInput train_input = 14;
+    }
 }
 
 message CreateJobResponse {

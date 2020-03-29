@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package infer;
+
+option go_package = "github.com/tradingAI/proto/gen/go/model";
+
+import "tweb/model.proto"
+
+message TbaseInferInput {
+    model.Model model = 1;
+    // YYYYmmdd
+    string date = 2;
+}
+
+enum ActionType {
+    SUGGEST_BUY = 0;
+    SUGGEST_SELL = 1;
+    SUGGEST_VOLUME = 2;
+    SUGGEST_VOLUME_PCT = 3;
+    PREDICT_HIGH = 4;
+    PREDICT_LOW = 5;
+    PREDICT_CLOSE = 6;
+}
+
+message TbaseAction {
+    ActionType action_type = 1;
+    string value = 2;
+}
+
+// predict results store in db
+message TbaseInferOutput {
+  uint64 job_id = 1;
+  uint64 model_id = 2;
+  // YYYYmmdd
+  string date = 3;
+  repeated Action actions = 4;
+}

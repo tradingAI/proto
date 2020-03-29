@@ -4,9 +4,13 @@ package job;
 
 option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 
+import "model/evaluate.proto"
+import "model/infer.proto"
+import "model/train.proto"
+
 enum JobType {
     UNKNOWN = 0;
-    PREDICT = 1;
+    INFER = 1;
     TRAIN = 2;
     EVALUATION = 3;
 }
@@ -30,8 +34,10 @@ message Job {
     int64 finished_time_usec = 8;
     uint32 total_steps = 9;
     uint32 current_step = 10;
-    oneof request {
-        // request types
-        // TODO(wen): https://github.com/tradingAI/proto/pull/3
+    repeated int32 gpus_index = 11;
+    oneof input {
+        evaluate.TbaseEvaluateInput eval_input = 12;
+        infer.TbaseInferInput infer_input = 13;
+        train.TbaseTrainInput train_input = 14;
     }
 }

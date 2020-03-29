@@ -21,20 +21,21 @@ message Runner {
     // id of job in processing
     repeated uint64 jobs_id = 3;
     // cpu core number
-    int cpu_core_num = 4;
+    int32 cpu_core_num = 4;
     // cpu 使用率
     double cpu_utilization = 5;
     // 无GPU则填0
-    int gpu_num = 6;
+    int32 gpu_num = 6;
+    repeated int32 gpus_index = 7;
     // gpu 使用率, 无GPU则填0
-    double gpu_utilization = 7;
-    // RAM, Mb
-    int memory = 8;
-    // 可使用内存 Mb
-    int available_memory = 9;
-    // gpu memory, Mb, 无GPU则填0
-    int gpu_memory = 10;
-    // 可使用显存 Mb
-    double available_gpu_memory = 11;
+    double gpu_utilization = 8;
+    // RAM, byte
+    int64 memory = 9;
+    // 可使用内存 byte
+    int64 available_memory = 10;
+    // gpu memory, byte, 无GPU则填0
+    int64 gpu_memory = 11;
+    // 可使用显存 byte
+    int64 available_gpu_memory = 12;
 
 }
