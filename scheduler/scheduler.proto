@@ -9,6 +9,8 @@ option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 service Scheduler {
     // Tweb <-> Scheduler
     rpc DestoryRunner(DestoryRunnerRequest) returns (DestoryRunnerResponse);
+    rpc CreateJob(CreatJobRequest) returns (CreatJobResponse);
+    rpc StopJob(StopJobRequest) returns (StopJobResponse);
 
     // Runner <-> Scheduler
     rpc RegisterRunner(RegisterRunnerRequest) returns (RegisterRunnerResponse);
@@ -21,6 +23,23 @@ message DestoryRunnerRequest {
 }
 
 message DestoryRunnerResponse {
+    bool ok = 1;
+}
+
+
+message CreateJobRequest {
+    string job_id = 1;
+}
+
+message CreateJobResponse {
+    bool ok = 1;
+}
+
+message StopJobRequest {
+    string job_id = 1;
+}
+
+message StopJobResponse {
     bool ok = 1;
 }
 
