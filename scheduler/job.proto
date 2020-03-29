@@ -21,12 +21,14 @@ enum JobStatus {
 
 message Job {
     uint64 id = 1;
-    JobStatus status = 2;
+    string runner_id = 2;
     JobType type = 3;
-    int64 create_time_usec = 4;
-    int64 finished_time_usec = 5;
-    int retry = 6;
-    string runner_id = 7;
+    JobStatus status = 4;
+    int retry = 5;
+    int64 create_time_usec = 6;
+    int64 finished_time_usec = 7;
+    uint32 total_steps = 8;
+    uint32 current_step = 9;
     oneof request {
         // request types
         // TODO(wen): https://github.com/tradingAI/proto/pull/3
