@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package scheduler;
+
+import "runner.proto";
+
+option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
+
+service Scheduler {
+    // Tweb <-> Scheduler
+    rpc DestoryRunner(DestoryRunnerRequest) returns (DestoryRunnerResponse);
+    rpc CreateJob(CreatJobRequest) returns (CreatJobResponse);
+    rpc StopJob(StopJobRequest) returns (StopJobResponse);
+
+    // Runner <-> Scheduler
+    rpc RegisterRunner(RegisterRunnerRequest) returns (RegisterRunnerResponse);
+    rpc HeartBeat(HeartBeatRequest) returns (HeartBeatResponse);
+}
+
+
+message DestoryRunnerRequest {
+    string runner_id = 1;
+}
+
+message DestoryRunnerResponse {
+    bool ok = 1;
+}
+
+
+message CreateJobRequest {
+    string job_id = 1;
+    uint32 max_retry = 2;
+}
+
+message CreateJobResponse {
+    bool ok = 1;
+}
+
+message StopJobRequest {
+    string job_id = 1;
+}
+
+message StopJobResponse {
+    bool ok = 1;
+}
+
+
+message RegisterRunnerRequest {
+    string runner_id = 1;
+}
+
+message RegisterRunnerResponse {
+    bool ok = 1;
+}
+
+
+message HeartBeatRequest {
+    runner.Runner runner = 1;
+}
+
+message HeartBeatResponse {
+    bool ok =1;
+}

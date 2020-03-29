@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package runner;
+
+import "job.proto";
+
+option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
+
+enum RunnerStatus {
+    UNKNOWN = 0;
+    IDLE = 1;
+    BUSY = 2;
+    RESTARTING = 3;
+}
+
+message Runner {
+    // runner id
+    string id = 1;
+    // runner status
+    RunnerStatus status = 2;
+    // id of job in processing
+    repeated uint64 jobs_id = 3;
+    // cpu core number
+    int cpu_core_num = 4;
+    // cpu 使用率
+    double cpu_utilization = 5;
+    // 无GPU则填0
+    int gpu_num = 6;
+    // gpu 使用率, 无GPU则填0
+    double gpu_utilization = 7;
+    // RAM, Mb
+    int memory = 8;
+    // 可使用内存 Mb
+    int available_memory = 9;
+    // gpu memory, Mb, 无GPU则填0
+    int gpu_memory = 10;
+    // 可使用显存 Mb
+    double available_gpu_memory = 11;
+
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package job;
+
+option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
+
+enum JobType {
+    UNKNOWN = 0;
+    PREDICT = 1;
+    TRAIN = 2;
+    EVALUATION = 3;
+}
+
+enum JobStatus {
+    UNKNOWN = 0;
+    CREATED = 1;
+    RUNNING = 2;
+    SUCCESSED = 3;
+    FAILED = 4;
+}
+
+message Job {
+    uint64 id = 1;
+    JobStatus status = 2;
+    JobType type = 3;
+    int64 create_time_usec = 4;
+    int64 finished_time_usec = 5;
+    int retry = 6;
+    string runner_id = 7;
+    oneof request {
+        // request types
+        // TODO(wen): https://github.com/tradingAI/proto/pull/3
+    }
+}
