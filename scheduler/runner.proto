@@ -26,15 +26,16 @@ message Runner {
     double cpu_utilization = 5;
     // 无GPU则填0
     int32 gpu_num = 6;
+    repeated int32 gpus_index = 7;
     // gpu 使用率, 无GPU则填0
-    double gpu_utilization = 7;
+    double gpu_utilization = 8;
     // RAM, Mb
-    int32 memory = 8;
+    int32 memory = 9;
     // 可使用内存 Mb
-    int32 available_memory = 9;
+    int32 available_memory = 10;
     // gpu memory, Mb, 无GPU则填0
-    int32 gpu_memory = 10;
+    int32 gpu_memory = 11;
     // 可使用显存 Mb
-    double available_gpu_memory = 11;
+    double available_gpu_memory = 12;
 
 }
