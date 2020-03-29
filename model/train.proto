@@ -8,7 +8,7 @@ import "model/evaluate.proto";
 
 message InstallRepository {
   string repo = 1;
-  string commit = 2;
+  string tag = 2;
   // git clone && git checkout commit 之后 待执行的install命令
   // 通常是： "pip install -e .", 可以由tweb写死, 防止一些非法命令
   repeated string cmds = 3;
