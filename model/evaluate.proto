@@ -6,11 +6,16 @@ option go_package = "github.com/tradingAI/proto/gen/go/model";
 
 import "tweb/model.proto"
 
+enum BaseStrategy {
+    UNKNOWN = 0;
+    BUY_AND_HOLD = 1;
+}
+
 message ExcessReturn {
   // 基线"股票/指数"代码
   string base_code = 1;
   // 基线策略名称
-  string strategy_name = 2;
+  BaseStrategy strategy = 2;
   // 绝对超额收益率
   float absolute_value = 3;
   // 年化超额收益率
@@ -41,5 +46,5 @@ message TbaseEvaluateInput {
   message TbaseEvaluateOutput {
     uint64 job_id = 1;
     uint64 model_id = 2;
-    evaluate.EvaluateMetrics metris = 3;
+    evaluate.EvaluateMetrics metrics = 3;
   }

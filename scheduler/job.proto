@@ -10,7 +10,7 @@ import "model/train.proto"
 
 enum JobType {
     UNKNOWN = 0;
-    PREDICT = 1;
+    INFER = 1;
     TRAIN = 2;
     EVALUATION = 3;
 }
