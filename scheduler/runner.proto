@@ -30,12 +30,12 @@ message Runner {
     // gpu 使用率, 无GPU则填0
     double gpu_utilization = 8;
     // RAM, byte
-    int32 memory = 9;
+    int64 memory = 9;
     // 可使用内存 byte
-    int32 available_memory = 10;
+    int64 available_memory = 10;
     // gpu memory, byte, 无GPU则填0
-    int32 gpu_memory = 11;
+    int64 gpu_memory = 11;
     // 可使用显存 byte
-    double available_gpu_memory = 12;
+    int64 available_gpu_memory = 12;
 
 }
