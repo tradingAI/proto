@@ -4,7 +4,7 @@ package infer;
 
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 
-import "tweb/model.proto"
+import "common/model.proto";
 
 message TbaseInferInput {
     model.Model model = 1;
@@ -33,5 +33,5 @@ message TbaseInferOutput {
   uint64 model_id = 2;
   // YYYYmmdd
   string date = 3;
-  repeated Action actions = 4;
+  repeated TbaseAction actions = 4;
 }

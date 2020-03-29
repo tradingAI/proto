@@ -1,10 +1,11 @@
 syntax = "proto3";
 
-import "common.proto";
-
 package account;
 
 option go_package = "github.com/tradingAI/proto/gen/go/tweb";
+
+import "common/user.proto";
+import "tweb/common.proto";
 
 // Account
 
@@ -13,7 +14,7 @@ message FetchAccountRequest {
 
 message FetchAccountResponse {
     common.Error error = 1;
-    repeated common.User accounts = 2;
+    repeated user.User accounts = 2;
 }
 
 message CreateAccountRequest {
@@ -39,5 +40,5 @@ message DeleteAccountRequest {
 }
 
 message DeleteAccountResponse {
-    common.Error error = 1;
+    // common.Error error = 1;
 }

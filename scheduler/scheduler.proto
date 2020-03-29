@@ -4,15 +4,15 @@ package scheduler;
 
 option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 
-import "runner.proto";
-import "model/evaluate.proto"
-import "model/infer.proto"
-import "model/train.proto"
+import "scheduler/runner.proto";
+import "model/evaluate.proto";
+import "model/infer.proto";
+import "model/train.proto";
 
 service Scheduler {
     // Tweb <-> Scheduler
     rpc DestoryRunner(DestoryRunnerRequest) returns (DestoryRunnerResponse);
-    rpc CreateJob(CreatJobRequest) returns (CreatJobResponse);
+    rpc CreateJob(CreateJobRequest) returns (CreateJobResponse);
     rpc StopJob(StopJobRequest) returns (StopJobResponse);
 
     // Runner <-> Scheduler
@@ -33,9 +33,9 @@ message CreateJobRequest {
     string job_id = 1;
     uint32 max_retry = 2;
     oneof input {
-        evaluate.TbaseEvaluateInput eval_input = 12;
-        infer.TbaseInferInput infer_input = 13;
-        train.TbaseTrainInput train_input = 14;
+        evaluate.TbaseEvaluateInput eval_input = 3;
+        infer.TbaseInferInput infer_input = 4;
+        train.TbaseTrainInput train_input = 5;
     }
 }
 

@@ -11,18 +11,6 @@ enum Error {
     INVALID_USERNAME_OR_PASSWORD = 3;
 }
 
-enum UserRole {
-    UNKNOWN_USER_ROLE = 0;
-    ROLE_ADMIN = 1;
-    ROLE_USER = 2;
-}
-
-message User {
-    uint64 id = 1;
-    UserRole role = 2;
-    string nickname = 3;
-}
-
 message StockDaily {
     string ts_code = 1;
     string trade_date = 2;

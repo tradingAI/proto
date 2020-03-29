@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/tradingAI/proto/gen/go/common";
+
+import "common/user.proto";
+
+// Status is the status of model upload to minio.
+enum ModelStatus {
+    UNKNOWN = 0;
+    CREATED = 1;
+    PROCESSING = 2;
+    SUCCESS = 3;
+    FAILED = 4;
+}
+
+message Model {
+    uint64 id = 1;
+    string name = 2;
+    string version = 3;
+    string description = 4;
+    string file_type = 5;
+    user.User user = 6;
+    ModelStatus status = 7;
+}

@@ -1,20 +1,21 @@
 syntax = "proto3";
 
-import "common.proto";
-
 package model;
 
 option go_package = "github.com/tradingAI/proto/gen/go/tweb";
 
+import "tweb/common.proto";
+import "common/model.proto";
+
 // model
 
 message FetchModelRequest {
-    
+
 }
 
 message FetchModelResponse {
     common.Error error = 1;
-    repeated Model models = 2;
+    repeated model.Model models = 2;
 }
 
 message CreateModelRequest {
@@ -57,23 +58,4 @@ message DownloadModelResponse {
 message ChunkMeta {
     string md5 = 1;
     string index = 2;
-}
-
-// Status is the status of model upload to minio.
-enum ModelStatus {
-    UNKNOWN = 0;
-    CREATED = 1;
-    PROCESSING = 2;
-    SUCCESS = 3;
-    FAILED = 4;
-}
-
-message Model {
-    uint64 id = 1;
-    string name = 2;
-    string version = 3;
-    string description = 4;
-    string file_type = 5;
-    common.User user = 6;
-    ModelStatus status = 7;
 }

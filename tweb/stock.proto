@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-import "common.proto";
-
 package stock;
 
 option go_package = "github.com/tradingAI/proto/gen/go/tweb";
+
+import "tweb/common.proto";
 
 // Stock
 

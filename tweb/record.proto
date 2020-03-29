@@ -1,14 +1,15 @@
 syntax = "proto3";
 
-import "common.proto";
-
 package record;
 
 option go_package = "github.com/tradingAI/proto/gen/go/tweb";
 
+import "tweb/common.proto";
+
 // record
 
 message FetchRecordRequest {
+
 }
 
 message FetchRecordResponse {

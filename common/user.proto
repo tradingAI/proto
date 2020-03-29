@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/tradingAI/proto/gen/go/common";
+
+enum UserRole {
+    UNKNOWN_USER_ROLE = 0;
+    ROLE_ADMIN = 1;
+    ROLE_USER = 2;
+}
+
+message User {
+    uint64 id = 1;
+    UserRole role = 2;
+    string nickname = 3;
+}
