@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package model;
+package modelio;
 
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 
