@@ -3,6 +3,7 @@ syntax = "proto3";
 package scheduler;
 
 import "runner.proto";
+import "model/input.proto"
 
 option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 
@@ -30,6 +31,11 @@ message DestoryRunnerResponse {
 message CreateJobRequest {
     string job_id = 1;
     uint32 max_retry = 2;
+    oneof input {
+      TbaseEvaluateInput eval_input = 3;
+      TbasePredictInput predict_input = 4;
+      TbaseTrainInput train_input = 5;
+    }
 }
 
 message CreateJobResponse {
