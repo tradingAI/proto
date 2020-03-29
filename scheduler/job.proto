@@ -26,7 +26,7 @@ message Job {
     int64 create_time_msec = 4;
     int64 finished_time_msec = 5;
     int retry = 6;
-    uint64 runner_id = 7;
+    string runner_id = 7;
     oneof request {
         // request types
         // TODO(wen): https://github.com/tradingAI/proto/pull/3
