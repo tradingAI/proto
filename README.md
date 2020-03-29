@@ -2,7 +2,7 @@
 
 # Introduction
 
-It is the repository for common Protocol Buffer files shared within the InferVision company.
+It is the repository for common Protocol Buffer files shared within the tradingAI.
 
 # Build for Go
 
