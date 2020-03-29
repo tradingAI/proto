@@ -29,13 +29,13 @@ message Runner {
     repeated int32 gpus_index = 7;
     // gpu 使用率, 无GPU则填0
     double gpu_utilization = 8;
-    // RAM, Mb
+    // RAM, byte
     int32 memory = 9;
-    // 可使用内存 Mb
+    // 可使用内存 byte
     int32 available_memory = 10;
-    // gpu memory, Mb, 无GPU则填0
+    // gpu memory, byte, 无GPU则填0
     int32 gpu_memory = 11;
-    // 可使用显存 Mb
+    // 可使用显存 byte
     double available_gpu_memory = 12;
 
 }

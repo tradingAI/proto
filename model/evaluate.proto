@@ -26,5 +26,5 @@ message EvaluateMetrics {
   // 夏普比率
   float sharpe_ratio = 4;
   // 超额收益率
-  option ExcessReturn excess_return = 5;
+  ExcessReturn excess_return = 5;
 }
