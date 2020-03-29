@@ -32,9 +32,10 @@ message Job {
     int64 finished_time_usec = 8;
     uint32 total_steps = 9;
     uint32 current_step = 10;
+    repeated int32 gpus_index = 11;
     oneof input {
-        input.TbaseEvaluateInput eval_input = 11;
-        input.TbasePredictInput predict_input = 12;
-        input.TbaseTrainInput train_input = 13;
+        input.TbaseEvaluateInput eval_input = 12;
+        input.TbasePredictInput predict_input = 13;
+        input.TbaseTrainInput train_input = 14;
     }
 }
