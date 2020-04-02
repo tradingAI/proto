@@ -25,6 +25,8 @@ PROTO_GEN_GO_DIR="$PROTO_GEN_DIR/go"
 for element in `ls $PROTO_GEN_GO_DIR`
     do  
         if [ -d $PROTO_GEN_GO_DIR/$element ];then
-            cd $PROTO_GEN_GO_DIR/$element && rm -rf go.mod go.sum && go mod init && go mod tidy
+            cd $PROTO_GEN_GO_DIR/$element && \
+            rm -rf go.mod go.sum && \
+            go mod init
         fi  
     done
