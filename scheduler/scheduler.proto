@@ -16,7 +16,6 @@ service Scheduler {
     rpc StopJob(StopJobRequest) returns (StopJobResponse);
 
     // Runner <-> Scheduler
-    rpc RegisterRunner(RegisterRunnerRequest) returns (RegisterRunnerResponse);
     rpc HeartBeat(HeartBeatRequest) returns (HeartBeatResponse);
 }
 
@@ -50,16 +49,6 @@ message StopJobRequest {
 message StopJobResponse {
     bool ok = 1;
 }
-
-
-message RegisterRunnerRequest {
-    string runner_id = 1;
-}
-
-message RegisterRunnerResponse {
-    bool ok = 1;
-}
-
 
 message HeartBeatRequest {
     runner.Runner runner = 1;

@@ -4,6 +4,8 @@ package runner;
 
 option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 
+import "scheduler/job.proto";
+
 enum RunnerStatus {
     UNKNOWN = 0;
     IDLE = 1;
@@ -17,7 +19,7 @@ message Runner {
     // runner status
     RunnerStatus status = 2;
     // id of job in processing
-    repeated uint64 jobs_id = 3;
+    repeated job.Job jobs = 3;
     // cpu core number
     int32 cpu_core_num = 4;
     // cpu 使用率
@@ -35,5 +37,6 @@ message Runner {
     int64 gpu_memory = 11;
     // 可使用显存 byte
     int64 available_gpu_memory = 12;
-
+    // User token
+    string token = 13;
 }
