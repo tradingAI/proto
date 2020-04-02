@@ -3,7 +3,6 @@
 set -e
 
 ROOT="$GOPATH/src/github.com/tradingAI"
-PROJECT_ROOT="$ROOT/tweb"
 PROTO_ROOT="$ROOT/proto"
 PROTO_GEN_DIR="$PROTO_ROOT/gen"
 
