@@ -17,6 +17,7 @@ service Scheduler {
 
     // Runner <-> Scheduler
     rpc HeartBeat(HeartBeatRequest) returns (HeartBeatResponse);
+    rpc RemoveJob(RemoveJobRequest) returns (RemoveJobResponse);
 }
 
 
@@ -55,5 +56,15 @@ message HeartBeatRequest {
 }
 
 message HeartBeatResponse {
-    bool ok =1;
+    bool ok = 1;
+}
+
+message RemoveJobRequest {
+    int64 job_id = 1;
+    // User token
+    string token = 2;
+}
+
+message RemoveJobResponse {
+    bool ok = 1;
 }
