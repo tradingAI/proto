@@ -25,16 +25,26 @@ enum JobStatus {
 
 message Job {
     uint64 id = 1;
+    // runner_id cannot be changed after specified
     string runner_id = 2;
+    // job type cannot be changed after specified
     JobType type = 3;
+    // job status
     JobStatus status = 4;
+    // retry times
     uint32 retry = 5;
+    // max retry times cannot be changed after specified
     uint32 max_retry = 6;
+    // create time usec cannot be changed after specified
     int64 create_time_usec = 7;
+    // finished time usec cannot be changed after specified
     int64 finished_time_usec = 8;
+    // total steps cannot be changed after specified
     uint32 total_steps = 9;
     uint32 current_step = 10;
+    // gpus index cannot be changed after specified
     repeated int32 gpus_index = 11;
+    // job input cannot be changed after specified
     oneof input {
         evaluate.TbaseEvaluateInput eval_input = 12;
         inference.TbaseInferInput infer_input = 13;
