@@ -17,6 +17,7 @@ service Scheduler {
 
     // Runner <-> Scheduler
     rpc HeartBeat(HeartBeatRequest) returns (HeartBeatResponse);
+    // Call scheduler to remove job from redis when runner start to do it.
     rpc RemoveJob(RemoveJobRequest) returns (RemoveJobResponse);
 }
 
