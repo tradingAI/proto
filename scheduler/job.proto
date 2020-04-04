@@ -23,6 +23,11 @@ enum JobStatus {
     FAILED = 4;
 }
 
+enum JobQueue {
+    CREATE = 0;
+    STOP = 1;
+}
+
 message Job {
     uint64 id = 1;
     // runner_id cannot be changed after specified

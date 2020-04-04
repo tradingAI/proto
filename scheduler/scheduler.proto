@@ -5,6 +5,7 @@ package scheduler;
 option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 
 import "scheduler/runner.proto";
+import "scheduler/job.proto";
 import "model/evaluate.proto";
 import "model/inference.proto";
 import "model/train.proto";
@@ -64,6 +65,8 @@ message RemoveJobRequest {
     int64 job_id = 1;
     // User token
     string token = 2;
+    // job queue in redis
+    job.JobQueue queue = 3;
 }
 
 message RemoveJobResponse {
