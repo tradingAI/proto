@@ -25,6 +25,8 @@ service Scheduler {
 
 message DestoryRunnerRequest {
     string runner_id = 1;
+     // User token
+     string token = 2;
 }
 
 message DestoryRunnerResponse {
@@ -33,11 +35,13 @@ message DestoryRunnerResponse {
 
 message CreateJobRequest {
     int64 job_id = 1;
-    uint32 max_retry = 2;
+    // User token
+    string token = 2;
+    uint32 max_retry = 3;
     oneof input {
-        evaluate.TbaseEvaluateInput eval_input = 3;
-        inference.TbaseInferInput infer_input = 4;
-        train.TbaseTrainInput train_input = 5;
+        evaluate.TbaseEvaluateInput eval_input = 4;
+        inference.TbaseInferInput infer_input = 5;
+        train.TbaseTrainInput train_input = 6;
     }
 }
 
@@ -47,6 +51,8 @@ message CreateJobResponse {
 
 message StopJobRequest {
     int64 job_id = 1;
+    // User token
+    string token = 2;
 }
 
 message StopJobResponse {
