@@ -28,7 +28,7 @@ enum JobQueue {
     STOP = 1;
 }
 
-message jobInput {
+message JobInput {
     oneof input {
         evaluate.TbaseEvaluateInput eval_input = 1;
         inference.TbaseInferInput infer_input = 2;
@@ -58,5 +58,5 @@ message Job {
     // gpus index cannot be changed after specified
     repeated int32 gpus_index = 11;
     // job input cannot be changed after specified
-    jobInput input =12;
+    JobInput input =12;
 }

@@ -35,7 +35,7 @@ message CreateJobRequest {
     // User token
     string token = 2;
     uint32 max_retry = 3;
-    job.jobInput input = 4;
+    job.JobInput input = 4;
 }
 
 message CreateJobResponse {
