@@ -6,9 +6,6 @@ option go_package = "github.com/tradingAI/proto/gen/go/scheduler";
 
 import "scheduler/runner.proto";
 import "scheduler/job.proto";
-import "model/evaluate.proto";
-import "model/inference.proto";
-import "model/train.proto";
 
 service Scheduler {
     // Tweb <-> Scheduler
@@ -38,11 +35,7 @@ message CreateJobRequest {
     // User token
     string token = 2;
     uint32 max_retry = 3;
-    oneof input {
-        evaluate.TbaseEvaluateInput eval_input = 4;
-        inference.TbaseInferInput infer_input = 5;
-        train.TbaseTrainInput train_input = 6;
-    }
+    job.jobInput input = 4;
 }
 
 message CreateJobResponse {
