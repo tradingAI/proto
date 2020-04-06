@@ -14,18 +14,15 @@ message InstallRepository {
   repeated string cmds = 3;
 }
 
-message ParameterEntry {
-  string key = 1;
-  string value = 2;
-}
-
 message TbaseTrainInput {
     InstallRepository tenvs_repo = 1;
     InstallRepository tbase_repo = 2;
     // 安装好依赖包之后，执行run的命令
     // 通常是： python -m tbase.run --parm1=v1 --parm2=v2 ...
     // parmeters reference: https://github.com/tradingAI/tbase/blob/d75c4bc501064bcd17dece54c26e83feb7700999/tbase/common/cmd_util.py#L77
-    repeated ParameterEntry parameters = 3;
+    // key: parameter name
+    // value: parameter value
+    map<string, string> parameters = 3;
 }
 
 message TbaseTrainOutput{
