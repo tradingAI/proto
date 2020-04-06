@@ -6,19 +6,10 @@ option go_package = "github.com/tradingAI/proto/gen/go/model";
 
 import "model/evaluate.proto";
 
-message InstallRepository {
-  string repo = 1;
-  string tag = 2;
-  // git clone && git checkout commit 之后 待执行的install命令
-  // 通常是： "pip install -e .", 可以由tweb写死, 防止一些非法命令
-  repeated string cmds = 3;
-}
-
 message TbaseTrainInput {
-    InstallRepository tenvs_repo = 1;
-    InstallRepository tbase_repo = 2;
-    // 安装好依赖包之后，执行run的命令
-    // 通常是： python -m tbase.run --parm1=v1 --parm2=v2 ...
+    string tenvs_tag = 1;
+    string tbase_tag = 2;
+    // tbase运行命令通常是： python -m tbase.run --parm1=v1 --parm2=v2 ...
     // parmeters reference: https://github.com/tradingAI/tbase/blob/d75c4bc501064bcd17dece54c26e83feb7700999/tbase/common/cmd_util.py#L77
     // key: parameter name
     // value: parameter value
