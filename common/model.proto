@@ -30,8 +30,6 @@ message Model {
 }
 
 message TensorboardEvent {
-    uint64 job_id = 1;
-    uint64 model_id = 2;
-    string bucket = 3;
-    string obj_name = 4;
+    string bucket = 1;
+    string obj_name = 2;
 }
