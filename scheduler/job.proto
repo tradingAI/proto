@@ -21,7 +21,7 @@ enum JobStatus {
     RUNNING = 2;
     SUCCESSED = 3;
     FAILED = 4;
-    STOPPED = 5;
+    CANCELLED = 5;
 }
 
 message JobInput {
