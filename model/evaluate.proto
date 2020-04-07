@@ -43,8 +43,8 @@ message TbaseEvaluateInput {
     string end = 3;
   }
 
-  message TbaseEvaluateOutput {
+message TbaseEvaluateOutput {
     uint64 job_id = 1;
     uint64 model_id = 2;
     evaluate.EvaluateMetrics metrics = 3;
-  }
+}

@@ -5,6 +5,7 @@ package train;
 option go_package = "github.com/tradingAI/proto/gen/go/model";
 
 import "model/evaluate.proto";
+import "common/model.proto";
 
 message TbaseTrainInput {
     string tenvs_tag = 1;
@@ -17,7 +18,7 @@ message TbaseTrainInput {
 }
 
 message TbaseTrainOutput{
-  uint64 job_id = 1;
-  uint64 model_id = 2;
-  evaluate.EvaluateMetrics metrics = 3;
+    uint64 job_id = 1;
+    model.Model model = 2;
+    evaluate.EvaluateMetrics metrics = 3;
 }

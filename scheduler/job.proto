@@ -37,12 +37,11 @@ message JobInput {
 }
 
 message JobOutput {
-    // TODO(mike)
-    // oneof output {
-    //     evaluate.TbaseEvaluateOutput eval_output = 1;
-    //     inference.TbaseInferOutput infer_output = 2;
-    //     train.TbaseTrainOutput train_output = 3;
-    // }
+    oneof output {
+        evaluate.TbaseEvaluateOutput eval_output = 1;
+        inference.TbaseInferOutput infer_output = 2;
+        train.TbaseTrainOutput train_output = 3;
+    }
 }
 
 message Job {
@@ -72,6 +71,6 @@ message Job {
     JobOutput output = 13;
     // User token
     string token = 14;
-    // UUID generated from tweb 
+    // UUID generated from tweb
     string request_id = 15;
 }
