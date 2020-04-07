@@ -23,4 +23,6 @@ message Model {
     string file_type = 5;
     user.User user = 6;
     ModelStatus status = 7;
+    // s3/minio中的bucket
+    string bucket = 8;
 }
