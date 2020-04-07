@@ -40,8 +40,8 @@ message HeartBeatRequest {
 
 message HeartBeatResponse {
     bool ok = 1;
-    // job assigned to runner
-    job.Job job = 2;
+    // jobs assigned to runner for running or stop
+    repeated job.Job jobs = 2;
     // if destory runner
     bool destory = 3;
 }
