@@ -54,6 +54,8 @@ message HeartBeatRequest {
 
 message HeartBeatResponse {
     bool ok = 1;
+    // job assigned to runner
+    job.Job job = 2;
 }
 
 message RemoveJobRequest {
