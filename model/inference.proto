@@ -29,9 +29,9 @@ message TbaseAction {
 
 // predict results store in db
 message TbaseInferOutput {
-  uint64 job_id = 1;
-  uint64 model_id = 2;
-  // YYYYmmdd
-  string date = 3;
-  repeated TbaseAction actions = 4;
+    uint64 job_id = 1;
+    uint64 model_id = 2;
+    // YYYYmmdd
+    string date = 3;
+    repeated TbaseAction actions = 4;
 }
