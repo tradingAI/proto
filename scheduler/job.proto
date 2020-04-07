@@ -59,4 +59,8 @@ message Job {
     repeated int32 gpus_index = 11;
     // job input cannot be changed after specified
     JobInput input =12;
+    // User token
+    string token = 13;
+    // UUID generated from tweb 
+    string request_id = 14;
 }

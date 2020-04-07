@@ -31,11 +31,7 @@ message DestoryRunnerResponse {
 }
 
 message CreateJobRequest {
-    int64 job_id = 1;
-    // User token
-    string token = 2;
-    uint32 max_retry = 3;
-    job.JobInput input = 4;
+    job.Job job = 1;
 }
 
 message CreateJobResponse {
