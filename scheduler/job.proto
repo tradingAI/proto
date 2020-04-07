@@ -21,12 +21,7 @@ enum JobStatus {
     RUNNING = 2;
     SUCCESSED = 3;
     FAILED = 4;
-    STOPPED = 5;
-}
-
-enum JobQueue {
-    CREATE = 0;
-    STOP = 1;
+    STOP = 5;
 }
 
 message JobInput {
