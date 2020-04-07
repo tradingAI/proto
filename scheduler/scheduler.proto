@@ -9,7 +9,6 @@ import "scheduler/job.proto";
 
 service Scheduler {
     // Tweb <-> Scheduler
-    rpc DestoryRunner(DestoryRunnerRequest) returns (DestoryRunnerResponse);
     rpc CreateJob(CreateJobRequest) returns (CreateJobResponse);
     rpc StopJob(StopJobRequest) returns (StopJobResponse);
 
@@ -54,4 +53,6 @@ message HeartBeatResponse {
     bool ok = 1;
     // job assigned to runner
     job.Job job = 2;
+    // if destory runner
+    bool destory = 3;
 }

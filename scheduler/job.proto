@@ -36,6 +36,15 @@ message JobInput {
     }
 }
 
+message JobOutput {
+    // TODO(mike)
+    // oneof output {
+    //     evaluate.TbaseEvaluateOutput eval_output = 1;
+    //     inference.TbaseInferOutput infer_output = 2;
+    //     train.TbaseTrainOutput train_output = 3;
+    // }
+}
+
 message Job {
     uint64 id = 1;
     // runner_id cannot be changed after specified
@@ -58,9 +67,11 @@ message Job {
     // gpus index cannot be changed after specified
     repeated int32 gpus_index = 11;
     // job input cannot be changed after specified
-    JobInput input =12;
+    JobInput input = 12;
+    // job output cannot be changed after specified
+    JobOutput output = 13;
     // User token
-    string token = 13;
+    string token = 14;
     // UUID generated from tweb 
-    string request_id = 14;
+    string request_id = 15;
 }
