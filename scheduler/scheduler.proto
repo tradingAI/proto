@@ -15,8 +15,6 @@ service Scheduler {
 
     // Runner <-> Scheduler
     rpc HeartBeat(HeartBeatRequest) returns (HeartBeatResponse);
-    // Call scheduler to remove job from redis when runner start to do it.
-    rpc RemoveJob(RemoveJobRequest) returns (RemoveJobResponse);
 }
 
 
@@ -56,16 +54,4 @@ message HeartBeatResponse {
     bool ok = 1;
     // job assigned to runner
     job.Job job = 2;
-}
-
-message RemoveJobRequest {
-    int64 job_id = 1;
-    // User token
-    string token = 2;
-    // job queue in redis
-    job.JobQueue queue = 3;
-}
-
-message RemoveJobResponse {
-    bool ok = 1;
 }
