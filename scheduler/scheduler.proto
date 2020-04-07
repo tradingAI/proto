@@ -16,17 +16,6 @@ service Scheduler {
     rpc HeartBeat(HeartBeatRequest) returns (HeartBeatResponse);
 }
 
-
-message DestoryRunnerRequest {
-    string runner_id = 1;
-     // User token
-     string token = 2;
-}
-
-message DestoryRunnerResponse {
-    bool ok = 1;
-}
-
 message CreateJobRequest {
     job.Job job = 1;
 }
