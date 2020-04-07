@@ -17,10 +17,10 @@ enum ActionType {
     SUGGEST_SELL = 1;
     SUGGEST_VOLUME = 2;
     BUY_VOLUME_PCT = 3;
-    SELL_VOLUME_PCT = 3;
-    PREDICT_HIGH = 4;
-    PREDICT_LOW = 5;
-    PREDICT_CLOSE = 6;
+    SELL_VOLUME_PCT = 4;
+    PREDICT_HIGH = 5;
+    PREDICT_LOW = 6;
+    PREDICT_CLOSE = 7;
 }
 
 message TbaseAction {
