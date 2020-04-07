@@ -21,4 +21,5 @@ message TbaseTrainOutput{
     uint64 job_id = 1;
     model.Model model = 2;
     evaluate.EvaluateMetrics metrics = 3;
+    model.TensorboardEvent tensorboard_event = 4;
 }

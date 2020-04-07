@@ -28,3 +28,8 @@ message Model {
     string bucket = 8;
     string obj_name = 9;
 }
+
+message TensorboardEvent {
+    string bucket = 1;
+    string obj_name = 2;
+}
