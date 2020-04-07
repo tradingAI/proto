@@ -20,9 +20,11 @@ message Model {
     string name = 2;
     string version = 3;
     string description = 4;
+    // application/x-tar or application/zip
     string file_type = 5;
     user.User user = 6;
     ModelStatus status = 7;
     // s3/minio中的bucket
     string bucket = 8;
+    string obj_name = 9;
 }
