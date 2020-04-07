@@ -25,6 +25,7 @@ enum ActionType {
 message TbaseAction {
     ActionType action_type = 1;
     string value = 2;
+    string code = 3;
 }
 
 // predict results store in db
