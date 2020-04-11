@@ -18,7 +18,9 @@ message TbaseTrainInput {
     // 训练模型需要上传到哪个bucket中，以支持不同的用户bucket不一样
     string bucket = 4;
     // 模型需要上传到哪个目录下, 以便由tweb控制组织文件目录的方式
-    string file_path = 5;
+    string model_file_path = 5;
+    // tensorboard event 需要上传到哪个目录下
+    string tensorboard_file_path = 6;
 }
 
 message TbaseTrainOutput{
