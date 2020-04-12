@@ -15,6 +15,12 @@ message TbaseTrainInput {
     // key: parameter name
     // value: parameter value
     map<string, string> parameters = 3;
+    // 训练模型需要上传到哪个bucket中，以支持不同的用户bucket不一样
+    string bucket = 4;
+    // 模型需要上传到哪个目录下, 以便由tweb控制组织文件目录(/user/model)的方式
+    string model_file_dir = 5;
+    // tensorboard event 需要上传到哪个目录(/user/tensorboard)下
+    string tensorboard_file_dir = 6;
 }
 
 message TbaseTrainOutput{
