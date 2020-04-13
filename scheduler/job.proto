@@ -69,4 +69,6 @@ message Job {
     string token = 14;
     // UUID generated from tweb
     string request_id = 15;
+    // if error status, provide some info/tips for user
+    string err_info = 16;
 }
